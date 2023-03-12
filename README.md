@@ -1,1 +1,1 @@
-# Redux_-_Redux-Toolkit
+# Redux_Redux-Toolkit
