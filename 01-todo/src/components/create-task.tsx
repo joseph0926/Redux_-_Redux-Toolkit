@@ -1,13 +1,17 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux/es/exports';
+import { addTask } from '../features/tasks-slice';
 
 const CreateTask = () => {
   const [newTaskTitle, setnewTaskTitle] = useState('');
+  const dispatchFn = useDispatch();
 
   return (
     <form
       className="create-task"
       onSubmit={(e) => {
         e.preventDefault();
+        dispatchFn(addTask({ title: newTaskTitle }));
       }}
     >
       <label htmlFor="new-task-title">
